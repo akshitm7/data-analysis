@@ -1,0 +1,15 @@
+import requests
+#web scraping library
+from bs4 import BeautifulSoup 
+import pandas as pd
+import matplotlib.pyplot as plt
+#old dataset(2021)
+df=pd.read_csv("netflix_titles.csv") 
+#print first 5 rows
+df.head() 
+#check for null values
+df.isnull().sum 
+#Information about datatypes used
+df.info()  
+#Convert date to datetime format for trend analysis
+df["date_added"]= pd.to_datetime(df["date_added"])
