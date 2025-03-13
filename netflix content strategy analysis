@@ -13,3 +13,9 @@ df.isnull().sum
 df.info()  
 #Convert date to datetime format for trend analysis
 df["date_added"]= pd.to_datetime(df["date_added"])
+#Yearly Releases
+df['release_year'].value_counts().sort_index().plot(kind="line", figsize=(10, 5))
+plt.xlabel("Year")
+plt.ylabel("Number of Releases")
+plt.title("Number of Netflix Releases per Year")
+plt.show()
